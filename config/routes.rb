@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get '/post/:id' => 'home#show', as: 'home_post'
 
+  post '/post/:id/comment' => 'home#add_comment', as: 'post_add_comment'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

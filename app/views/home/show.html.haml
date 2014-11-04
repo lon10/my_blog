@@ -4,4 +4,19 @@
 =@post.text
 %br
 %br
+- @post.comments.each do |comment|
+  = comment.created_at
+  %br
+  = comment.name
+  %br
+  = comment.text
+  %br
+
+= simple_form_for @new_comment, url: post_add_comment_path do |f|
+  = f.input :post_id, as: :hidden, input_html: { value: @post.id }
+
+  = f.input :name, label: 'Имя'
+  = f.input :text, label: 'Комментарий'
+  = f.submit 'Оставить комментарий'
+
 
