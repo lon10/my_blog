@@ -1,8 +1,5 @@
 - @posts.each do |post|
-  =post.title
-  %br
-  %br
-  =post.text
+  = link_to(post.title, home_post_path(post))
   %br
   %br
 
