@@ -19,4 +19,6 @@ group :development do
   gem 'pry', '~> 0.9.12.6'
   gem 'byebug', '~> 2.7.0'
   gem 'pry-byebug', '~> 1.3.2'
+
+  gem 'zeus'
 end

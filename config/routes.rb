@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   post '/post/:id/comment' => 'home#add_comment', as: 'post_add_comment'
 
+  namespace :admin do
+    resources :posts
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,0 +1,15 @@
+- @posts.each do |post|
+  = post.created_at
+  %br
+  = post.title
+  %br
+  = post.text
+  %br
+  удалить
+  %br
+  = link_to('Редактировать', edit_admin_post_path(post))
+  %hr
+
+%br
+%br
+= link_to('Добавить пост', new_admin_post_path)

@@ -1,0 +1,6 @@
+= simple_form_for @post, url: admin_post_path do |f|
+
+  = f.input :title, label: 'Название'
+  = f.input :text, label: 'Текст'
+
+  = f.submit 'Сохранить'
