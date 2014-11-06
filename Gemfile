@@ -14,16 +14,22 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'pg'
 
-
 group :development do
-  gem 'pry', '~> 0.9.12.6'
-  gem 'byebug', '~> 2.7.0'
-  gem 'pry-byebug', '~> 1.3.2'
-
   gem 'zeus'
 end
 
 group :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
+  gem 'spreewald'
+  gem 'shoulda-matchers'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
+group :development, :test do
+  gem 'pry', '~> 0.9.12.6'
+  gem 'byebug', '~> 2.7.0'
+  gem 'pry-byebug', '~> 1.3.2'
 end
