@@ -16,3 +16,4 @@ Feature:
       And I press "Войти"
     Then I should not see "Sign in"
       And I should see "Добавить пост"
+
