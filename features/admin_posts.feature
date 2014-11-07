@@ -17,6 +17,12 @@ Feature:
     Then I should not see "Sign in"
       And I should see "Добавить пост"
 
+  Scenario: I should be able to sign_out
+    Given I signed in as admin
+      And I am on the admin page
+    When I click on "Выйти"
+    Then I should see "Signed out successfully."
+
   Scenario: I should be able to add new post
     Given I signed in as admin
       And I am on the admin page
@@ -47,3 +53,12 @@ Feature:
     Then I should see "Добавить пост"
       And I should see edited post content
 
+  @javascript
+  Scenario: I should be able to delete post
+    Given I signed in as admin
+      And there is post
+      And I am on the admin page
+    When I click on "Удалить"
+      And I confirm dialog
+    Then I should see "Пост успешно удалён"
+      And I should not see "title_ololo"

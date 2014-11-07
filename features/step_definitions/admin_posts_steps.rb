@@ -30,3 +30,7 @@ When(/^I should see edited post content$/) do
   page.should have_content('edited_title')
   page.should have_content('edited_text')
 end
+
+When(/^I confirm dialog$/) do
+  page.driver.browser.switch_to.alert.accept
+end

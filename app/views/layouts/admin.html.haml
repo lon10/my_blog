@@ -7,6 +7,9 @@
       My blog
 
   %body
+    .sign_out
+      = link_to('Выйти', destroy_user_session_path, method: :delete)
+
     - flash.each do |name, msg|
       = content_tag :div, msg, class: "flash_#{name}"
 

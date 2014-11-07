@@ -11,12 +11,11 @@ class Admin::PostsController < Admin::AdminController
   def create
     @post = Post.new(post_params)
 
-    if @post.save
-      redirect_to admin_posts_path
+    if(@post.save)
+      redirect_to admin_posts_path, notice: 'Пост добавлен'
     else
       redirect_to new_admin_post_path
     end
-
   end
 
   def edit
@@ -26,10 +25,22 @@ class Admin::PostsController < Admin::AdminController
   def update
     find_post
 
-    if @post.update(post_params)
-      redirect_to admin_posts_path
+    if(@post.update(post_params))
+      redirect_to admin_posts_path, notice: 'Пост отредактирован'
     else
       redirect_to new_admin_post_path
+    end
+  end
+
+  def destroy
+    post = find_post
+
+    if(post.delete)
+      flash[:notice] = 'Пост успешно удалён'
+      render json: {result: true}
+    else
+      flash[:error] = 'Произошла ошибка'
+      render json: {result: false}
     end
   end
 
