@@ -9,9 +9,12 @@ gem 'simple_form'
 gem 'haml-rails'
 gem 'devise'
 gem 'jquery-rails'
+gem 'less-rails-bootstrap'
+gem 'therubyracer'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
+
 
 group :development do
   gem 'zeus'
