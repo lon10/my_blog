@@ -20,11 +20,11 @@ class Admin::PostsController < Admin::AdminController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    find_post
   end
 
   def update
-    @post = Post.find(params[:id])
+    find_post
 
     if @post.update(post_params)
       redirect_to admin_posts_path
@@ -37,6 +37,10 @@ class Admin::PostsController < Admin::AdminController
 
   def post_params
     params.require(:post).permit(:title, :text)
+  end
+
+  def find_post
+    @post = Post.find(params[:id])
   end
 
 

@@ -1,7 +1,7 @@
 class Admin::AdminController < ApplicationController
   # layout 'admin'
 
-  before_filter :authorize
+  before_action :authorize
 
   def authorize
     unless user_signed_in?

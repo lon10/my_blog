@@ -14,6 +14,10 @@ module NavigationHelpers
         root_path
       when /^the existing post\s?page$/
         home_post_path(Post.last)
+      when /^the admin \s?page$/
+        admin_path
+      when /^the auth \s?page$/
+        new_user_session_path
       else
         begin
           page_name =~ /^the (.*) page$/

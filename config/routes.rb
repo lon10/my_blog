@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post '/post/:id/comment' => 'home#add_comment', as: 'post_add_comment'
 
   namespace :admin do
-    get '/' => 'posts#index', as: 'admin'
+    get '/' => 'posts#index'
 
     resources :posts
   end
