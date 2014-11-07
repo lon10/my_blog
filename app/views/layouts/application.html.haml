@@ -1,9 +1,7 @@
 %html
   %head
-    %meta{charset: "utf-8"}/
     = javascript_include_tag :application
     = stylesheet_link_tag :application
-
 
     %title
       My blog
@@ -12,4 +10,5 @@
     - flash.each do |name, msg|
       = content_tag :div, msg, class: "flash_#{name}"
 
-    = yield
+    .main_wrapper
+      = yield
