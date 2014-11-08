@@ -1,22 +1,31 @@
-= @post.title
-%br
-%br
-=@post.text
-%br
-%br
+.well
+  %h3
+    = @post.title
+  %p
+    = @post.text
+  .small
+    = format_date(@post.created_at)
+
+.h5
+  Комментариев:
+  = @post.comments.count
+
+.comment_form
+  = simple_form_for @new_comment, url: post_add_comment_path do |f|
+    = f.input :post_id, as: :hidden, input_html: { value: @post.id }
+    .form-group
+      = f.input :name, label: 'Имя', input_html: { class: 'form-control' }
+    .form-group
+      = f.input :text, label: 'Комментарий', input_html: { class: 'form-control comment_text_add' }
+    .form-group
+      = f.submit 'Оставить комментарий', class: 'btn btn-default'
+
 - @post.comments.each do |comment|
-  = comment.created_at
-  %br
-  = comment.name
-  %br
-  = comment.text
-  %br
-
-= simple_form_for @new_comment, url: post_add_comment_path do |f|
-  = f.input :post_id, as: :hidden, input_html: { value: @post.id }
-
-  = f.input :name, label: 'Имя'
-  = f.input :text, label: 'Комментарий'
-  = f.submit 'Оставить комментарий'
-
-
+  %div
+    .h4
+      = comment.name.html_safe
+    .small
+      = format_date_time(comment.created_at)
+    %p
+      = comment.text.html_safe
+    %hr

@@ -12,7 +12,7 @@ class HomeController < ApplicationController
 
   def add_comment
     Comment.create!(comment_params)
-    redirect_to home_post_path(comment_params[:post_id])
+    redirect_to home_post_path(comment_params[:post_id]), flash: { notice: 'Ваш комментарий добавлен!' }
   end
 
   private

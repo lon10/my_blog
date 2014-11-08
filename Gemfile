@@ -8,13 +8,14 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'simple_form'
 gem 'haml-rails'
 gem 'devise'
-gem 'jquery-rails'
-gem 'less-rails-bootstrap'
-gem 'therubyracer'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
 
+gem 'jquery-rails'
+gem 'therubyracer'
+gem 'less-rails' 
+gem 'twitter-bootstrap-rails'
 
 group :development do
   gem 'zeus'
