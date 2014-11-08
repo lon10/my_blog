@@ -30,13 +30,14 @@ Feature:
     When I click on "Добавить пост"
     Then I should see "Добавление нового поста"
 
+  @javascript
   Scenario: I should be able to create post
     Given I signed in as admin
       And I am on the new post page
     When I fill in post content
-      And I press "Добавить"
+      And I press "Сохранить"
     Then I should see "Добавить пост"
-      And I should see post content
+      And I should see "new_title"
 
   Scenario: I should be able to edit post
     Given I signed in as admin
@@ -52,7 +53,7 @@ Feature:
     When I fill in new post content
       And I press "Сохранить"
     Then I should see "Добавить пост"
-      And I should see edited post content
+      And I should see "edited_title"
 
   @javascript
   Scenario: I should be able to delete post

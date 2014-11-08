@@ -3,8 +3,8 @@
 
 %table.table.table-striped
   - @posts.each do |post|
-    %tr.active{ id: "#{post.id}" }
+    %tr.active
       %td= format_date_time(post.created_at)
       %td= post.title
-      %td= link_to('Удалить', '#', class: 'delete_post')
+      %td= link_to('Удалить', '#', class: 'delete_post', id: "#{post.id}" )
       %td= link_to('Редактировать', edit_admin_post_path(post))
