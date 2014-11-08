@@ -1,16 +1,10 @@
-- @posts.each do |post|
-  %div{ id: "#{post.id}" }
-    = post.created_at
-    %br
-    = post.title
-    %br
-    = post.text
-    %br
-    = link_to('Удалить', '#', class: 'delete_post')
-    %br
-    = link_to('Редактировать', edit_admin_post_path(post))
-  %hr
+%p
+  = link_to('Добавить пост', new_admin_post_path, class: 'btn btn-default')
 
-%br
-%br
-= link_to('Добавить пост', new_admin_post_path)
+%table.table.table-striped
+  - @posts.each do |post|
+    %tr.active{ id: "#{post.id}" }
+      %td= format_date_time(post.created_at)
+      %td= post.title
+      %td= link_to('Удалить', '#', class: 'delete_post')
+      %td= link_to('Редактировать', edit_admin_post_path(post))

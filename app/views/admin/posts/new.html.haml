@@ -1,10 +1,4 @@
-Добавление нового поста
-%br
-%br
+%h4
+  Добавление нового поста
 
-= simple_form_for @post, url: admin_posts_path do |f|
-
-  = f.input :title, label: 'Название'
-  = f.input :text, label: 'Текст'
-
-  = f.submit 'Добавить', class: 'btn btn-primary'
+= render partial:  'form', locals: { post: @post, url: admin_posts_path }
