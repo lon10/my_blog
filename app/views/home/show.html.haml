@@ -21,7 +21,7 @@
       = f.submit 'Оставить комментарий', class: 'btn btn-default'
 
 - @post.comments.each do |comment|
-  %div
+  .comment
     .h4
       &= comment.name
     .small
