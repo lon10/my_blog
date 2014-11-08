@@ -23,9 +23,9 @@
 - @post.comments.each do |comment|
   %div
     .h4
-      = comment.name.html_safe
+      &= comment.name
     .small
       = format_date_time(comment.created_at)
     %p
-      = comment.text.html_safe
+      &= comment.text
     %hr
