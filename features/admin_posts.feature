@@ -55,7 +55,6 @@ Feature:
     Then I should see "Добавить пост"
       And I should see "edited_title"
 
-  @javascript
   Scenario: I should be able to delete post
     Given I signed in as admin
       And there is post
