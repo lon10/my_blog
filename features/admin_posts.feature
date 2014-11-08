@@ -7,7 +7,7 @@ Feature:
 
   Scenario: as guest I should not have permission to posts
     When I am on the admin page
-    Then I should see "Sign in"
+    Then I should see "Войти"
       And I should not see "Добавить пост"
 
   Scenario: I should be able to authorize

@@ -4,7 +4,7 @@ Feature:
 
   Scenario: Welcome page
     When I visit the home page
-    Then I should see "Welcome to my blog!"
+    Then I should see "Мой блог"
 
   Scenario: Browsing all posts on home page
     Given there is post
