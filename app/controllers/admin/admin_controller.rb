@@ -1,6 +1,4 @@
 class Admin::AdminController < ApplicationController
-  layout 'admin'
-
   before_action :authorize
 
   def authorize

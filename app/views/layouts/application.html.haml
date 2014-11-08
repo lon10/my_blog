@@ -18,6 +18,11 @@
         %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
         %a.navbar-brand(href="#{root_path}") Мой блог
         %a.navbar-brand(href="#{static_pages_about_me_path}") Обо мне
+        .pull-right
+          .sign_out
+            - if user_signed_in?
+              = link_to('Управление контентом', admin_path, class: 'navbar-brand')
+              = link_to('Выйти', destroy_user_session_path, method: :delete, class: 'navbar-brand')
     .container
       = bootstrap_flash
       = yield
