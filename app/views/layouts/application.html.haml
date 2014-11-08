@@ -17,9 +17,7 @@
       .container
         %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
         %a.navbar-brand(href="#{root_path}") Мой блог
-        .navbar-collapse.collapse.navbar-responsive-collapse
-          %ul.nav.navbar-nav
-            %li= link_to 'Обо мне', static_pages_about_me_path
+        %a.navbar-brand(href="#{static_pages_about_me_path}") Обо мне
     .container
       = bootstrap_flash
       = yield
