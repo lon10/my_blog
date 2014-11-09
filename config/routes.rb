@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/post/:id' => 'home#show', as: 'home_post'
   post '/post/:id/comment' => 'home#add_comment', as: 'post_add_comment'
 
-  get '/about_me' => 'static_pages#about_me', as: 'static_pages_about_me'
+  get '/about_blog' => 'static_pages#about_blog', as: 'static_pages_about_blog'
 
   namespace :admin do
     get '/' => 'posts#index'

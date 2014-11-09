@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
 
-  def about_me
+  def about_blog
   end
 
 end
