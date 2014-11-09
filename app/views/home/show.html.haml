@@ -14,9 +14,9 @@
   = simple_form_for @new_comment, url: post_add_comment_path do |f|
     = f.input :post_id, as: :hidden, input_html: { value: @post.id }
     .form-group
-      = f.input :name, label: 'Ваше имя', input_html: { class: 'form-control' }
+      = f.input :name, required: false, input_html: { class: 'form-control' }
     .form-group
-      = f.input :text, label: 'Текст комментария', input_html: { class: 'form-control comment_text_add' }
+      = f.input :text, required: false, input_html: { class: 'form-control comment_text_add' }
     .form-group
       = f.submit 'Оставить комментарий', class: 'btn btn-default'
 
