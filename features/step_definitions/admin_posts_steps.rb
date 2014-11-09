@@ -11,6 +11,11 @@ When(/^I fill in auth info$/) do
   fill_in 'user[password]', with: 'password'
 end
 
+When(/^I should see auth form$/) do
+  page.should have_content('E-mail')
+  page.should have_content('Пароль')
+end
+
 When(/^I fill in post content$/) do
   fill_in 'post[title]', with: 'new_title'
   fill_in 'post[text]', with: 'new_text'

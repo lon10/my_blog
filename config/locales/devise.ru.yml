@@ -16,6 +16,8 @@ ru:
 
   devise:
     failure:
+      user:
+        not_found_in_database: 'Неправильно введены E-mail или пароль'
       already_authenticated: "Вы уже вошли в систему."
       unauthenticated: "Вам необходимо войти в систему или зарегистрироваться."
       unconfirmed: "Вы должны подтвердить вашу учётную запись."
