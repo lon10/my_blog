@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   root 'home#index'
 
   get '/post/:id' => 'home#show', as: 'home_post'

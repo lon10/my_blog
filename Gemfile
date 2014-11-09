@@ -18,6 +18,9 @@ gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 
 gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'activesupport-json_encoder', github: 'rails/activesupport-json_encoder'
 
 group :development do
   gem 'zeus'
