@@ -14,6 +14,13 @@ end
 When(/^I fill in post content$/) do
   fill_in 'post[title]', with: 'new_title'
   fill_in 'post[text]', with: 'new_text'
+
+
+  # content = 'new_text'.to_json
+  # page.execute_script <<-SCRIPT
+  #   CKEDITOR.instances['#{locator}'].setData(#{content});
+  #   $('textarea##{locator}').text(#{content});
+  # SCRIPT
 end
 
 When(/^I fill in new post content$/) do
