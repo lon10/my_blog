@@ -3,5 +3,5 @@ class Post < ActiveRecord::Base
 
   paginates_per(10)
 
-  scope :by_order, -> { order('created_at DESC') }
+  scope :ordered, -> { order('created_at DESC') }
 end

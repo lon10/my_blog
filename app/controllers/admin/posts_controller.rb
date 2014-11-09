@@ -1,7 +1,9 @@
 class Admin::PostsController < Admin::AdminController
 
   def index
-    @posts = Post.order('created_at DESC')
+    page = params[:page]
+
+    @posts = Post.ordered.page(page)
   end
 
   def new

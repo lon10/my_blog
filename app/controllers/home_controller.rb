@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   def index
     page = params[:page]
 
-    @posts = Post.by_order.page(page)
+    @posts = Post.ordered.page(page)
   end
 
   def show
