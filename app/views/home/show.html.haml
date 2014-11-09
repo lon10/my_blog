@@ -11,7 +11,7 @@
   = @post.comments.count
 
 .comment_form
-  = simple_form_for @new_comment, url: post_add_comment_path do |f|
+  = simple_form_for @comment, url: post_add_comment_path do |f|
     = f.input :post_id, as: :hidden, input_html: { value: @post.id }
     .form-group
       = f.input :name, required: false, input_html: { class: 'form-control' }

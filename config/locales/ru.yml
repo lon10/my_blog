@@ -24,6 +24,14 @@ ru:
       next: "Дальше &rsaquo;"
       truncate: "&hellip;"
   activerecord:
+    errors:
+      models:
+        comment:
+          attributes:
+            text:
+              blank: 'Необходимо заполнить текст комментария'
+            name:
+              blank: 'Необходимо указать Ваше имя'
     attributes:
       user:
         email: 'E-mail'

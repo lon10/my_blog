@@ -7,17 +7,28 @@ class HomeController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
-    @comments = Comment.all
-    @new_comment = Comment.new
+    show_post
+    @comment = Comment.new
   end
 
   def add_comment
-    Comment.create!(comment_params)
-    redirect_to home_post_path(comment_params[:post_id]), flash: { notice: 'Ваш комментарий добавлен!' }
+    @comment = Comment.new(comment_params)
+
+    if @comment.save
+      redirect_to home_post_path(comment_params[:post_id]), notice: 'Ваш комментарий добавлен'
+    else
+      show_post
+      flash[:error] = 'Во время добавления комментария произошла ошибка'
+      render :show
+    end
   end
 
   private
+
+  def show_post
+    @post = Post.find(params[:id])
+    @comments = Comment.all
+  end
 
   def comment_params
     params.require(:comment).permit(:name, :text, :post_id)
