@@ -22,6 +22,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'activesupport-json_encoder', github: 'rails/activesupport-json_encoder'
 
+gem 'kaminari'
+gem 'kaminari-bootstrap'#, '~> 3.0.1'
+
 group :development do
   gem 'zeus'
 end

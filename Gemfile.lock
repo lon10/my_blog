@@ -112,6 +112,12 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    kaminari (0.15.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    kaminari-bootstrap (3.0.1)
+      kaminari (>= 0.13.0)
+      rails
     less (2.6.0)
       commonjs (~> 0.2.7)
     less-rails (2.6.0)
@@ -250,6 +256,8 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
+  kaminari-bootstrap
   less-rails
   mini_magick
   pg

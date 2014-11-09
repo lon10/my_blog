@@ -1,12 +1,14 @@
 class HomeController < ApplicationController
 
   def index
-    @posts = Post.all.to_a
+    page = params[:page]
+
+    @posts = Post.by_order.page(page)
   end
 
   def show
     @post = Post.find(params[:id])
-    @comments = Comment.all.to_a
+    @comments = Comment.all
     @new_comment = Comment.new
   end
 

@@ -6,3 +6,5 @@
       = text_preview(post.text).html_safe
     .small
       = format_date(post.created_at)
+
+= paginate @posts
