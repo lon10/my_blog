@@ -26,6 +26,11 @@ When(/^I edit post content$/) do
   fill_in_ckeditor 'post_text', with: 'edited_text'
 end
 
+When(/^I erase post content$/) do
+  fill_in 'post[title]', with: ''
+  fill_in_ckeditor 'post_text', with: ''
+end
+
 When(/^I confirm dialog$/) do
   page.driver.browser.switch_to.alert.accept
 end

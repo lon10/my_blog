@@ -45,9 +45,9 @@ Feature:
     Given I signed in as admin
       And I am on the new post page
     When I press "Сохранить"
-    Then I should see "Необходимо ввести название"
+    Then I should see "Во время создания поста произошла ошибка"
+      And I should see "Необходимо ввести название"
       And I should see "Необходимо заполнить текст поста"
-      And I should not see "Пост добавлен"
 
   @javascript
   Scenario: I should be able to create post
@@ -68,7 +68,7 @@ Feature:
     Then I should see "Редактирование поста"
 
   @javascript
-  Scenario: I should be able to edit post
+  Scenario: Edit post
     Given I signed in as admin
       And there is a post
       And I am on the last post editing page
@@ -77,6 +77,17 @@ Feature:
     Then I should see "Пост отредактирован"
       And I should see "edited_title"
       And edited post should be correct
+
+  @javascript
+  Scenario: Edit post validation
+    Given I signed in as admin
+      And there is a post
+      And I am on the last post editing page
+    When I erase post content
+      And I press "Сохранить"
+    Then I should see "Во время редактирования поста произошла ошибка"
+      And I should see "Необходимо ввести название"
+      And I should see "Необходимо заполнить текст поста"
 
   @javascript
   Scenario: I should be able to delete post

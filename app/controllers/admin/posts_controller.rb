@@ -31,7 +31,8 @@ class Admin::PostsController < Admin::AdminController
     if(@post.update(post_params))
       redirect_to admin_posts_path, notice: 'Пост отредактирован'
     else
-      redirect_to new_admin_post_path
+      flash[:error] = 'Во время редактирования поста произошла ошибка'
+      render :edit
     end
   end
 
