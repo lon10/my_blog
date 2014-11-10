@@ -1,0 +1,10 @@
+- @posts.each do |post|
+  .well
+    %h3
+      = link_to(post.title, home_post_path(post))
+    %p
+      = text_preview(post.text).html_safe
+    .small
+      = format_date(post.created_at)
+
+= paginate @posts

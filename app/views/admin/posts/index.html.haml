@@ -1,0 +1,16 @@
+%p
+  = link_to('Добавить пост', new_admin_post_path, class: 'btn btn-primary')
+
+%table.table.table-striped
+  - @posts.each do |post|
+    %tr.active
+      %td= format_date_time(post.created_at)
+      %td= post.title
+      %td
+        %a(href="#{edit_admin_post_path(post)}" id="#{post.id}")
+          .glyphicon.glyphicon-pencil
+      %td
+        %a.delete_post(href="" id="#{post.id}")
+          .glyphicon.glyphicon-trash
+
+= paginate @posts

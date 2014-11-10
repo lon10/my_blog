@@ -1,0 +1,8 @@
+= simple_form_for post, url: url do |f|
+  .form-group
+    = f.input :title, required: false, input_html: { class: 'form-control' }
+  .form-group
+    = f.input :text, required: false, as: :ckeditor, input_html: { class: 'form-control' }
+  .form-group
+    = link_to('Назад', admin_path, class: 'btn btn-default')
+    = f.submit 'Сохранить', class: 'btn btn-primary'
