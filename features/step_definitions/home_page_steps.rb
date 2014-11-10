@@ -48,7 +48,13 @@ Then(/^I should see ten first posts on page$/) do
   end
 end
 
-Then(/^I should not see full posts texts$/) do
+Then(/^I should see ten first post titles on page$/) do
+  (0..9).each do |index|
+    page.should have_content("title_#{index}")
+  end
+end
+
+Then(/^I should not see full post texts$/) do
   (20..29).each do |index|
     page.should_not have_content("full_text_#{index}")
   end

@@ -32,6 +32,12 @@ ru:
               blank: 'Необходимо заполнить текст комментария'
             name:
               blank: 'Необходимо указать Ваше имя'
+        post:
+          attributes:
+            title:
+              blank: 'Необходимо ввести название'
+            text:
+              blank: 'Необходимо заполнить текст поста'
     attributes:
       user:
         email: 'E-mail'

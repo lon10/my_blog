@@ -18,21 +18,34 @@ end
 
 When(/^I fill in post content$/) do
   fill_in 'post[title]', with: 'new_title'
-  fill_in 'post[text]', with: 'new_text'
-
-
-  # content = 'new_text'.to_json
-  # page.execute_script <<-SCRIPT
-  #   CKEDITOR.instances['#{locator}'].setData(#{content});
-  #   $('textarea##{locator}').text(#{content});
-  # SCRIPT
+  fill_in_ckeditor 'post_text', :with => 'new_text'
 end
 
-When(/^I fill in new post content$/) do
+When(/^I edit post content$/) do
   fill_in 'post[title]', with: 'edited_title'
-  fill_in 'post[text]', with: 'edited_text'
+  fill_in_ckeditor 'post_text', with: 'edited_text'
 end
 
 When(/^I confirm dialog$/) do
   page.driver.browser.switch_to.alert.accept
+end
+
+When(/^I click on edit button$/) do
+  page.find('.glyphicon-pencil').click()
+end
+
+When(/^I click on delete button$/) do
+  page.find('.glyphicon-trash').click()
+end
+
+Then(/^created post should be correct$/) do
+  post = Post.last
+  expect(post.title).to eq('new_title')
+  expect(post.text).to include('new_text')
+end
+
+Then(/^edited post should be correct$/) do
+  post = Post.last
+  expect(post.title).to eq('edited_title')
+  expect(post.text).to include('edited_text')
 end

@@ -16,7 +16,8 @@ class Admin::PostsController < Admin::AdminController
     if(@post.save)
       redirect_to admin_posts_path, notice: 'Пост добавлен'
     else
-      redirect_to new_admin_post_path
+      flash[:error] = 'Во время создания поста произошла ошибка'
+      render :new
     end
   end
 

@@ -10,7 +10,7 @@ Feature:
     Given there is a few posts
     When I am on the home page
     Then I should see ten last posts on page
-      And I should not see full posts texts
+      And I should not see full post texts
 
   Scenario: Pagination
     Given there is a few posts
