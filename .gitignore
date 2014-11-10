@@ -21,3 +21,5 @@ vendor/ruby
 *.orig
 /.idea
 .rvmrc
+
+/public/assets
