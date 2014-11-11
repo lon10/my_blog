@@ -7,5 +7,6 @@ $ ->
         type: 'DELETE'
         success: (data) ->
           window.location.reload()
+      true
     else
       false

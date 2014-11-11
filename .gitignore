@@ -11,6 +11,7 @@
 # Ignore the default SQLite database.
 /config/cucumber.yml
 /config/database.yml
+/config/secrets.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
@@ -21,3 +22,5 @@ vendor/ruby
 *.orig
 /.idea
 .rvmrc
+
+/public/assets
