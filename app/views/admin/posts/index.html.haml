@@ -7,16 +7,16 @@
       %td= format_date_time(post.created_at)
       %td= post.title
       %td
-        %a(href="#{admin_post_comments_path(post)}")
+        %a(href="#{admin_post_comments_path(post)}" title='Редактировать комментарии')
           .glyphicon.glyphicon-comment
       %td
-        %a(href="#{admin_post_path(post)}")
+        %a(href="#{admin_post_path(post)}" title='Предпросмотр')
           .glyphicon.glyphicon-eye-open
       %td
-        %a(href="#{edit_admin_post_path(post)}")
+        %a(href="#{edit_admin_post_path(post)}" title='Редактировать')
           .glyphicon.glyphicon-pencil
       %td
-        %a.delete_post(href='' id="#{post.id}")
+        %a.delete_post(href='' id="#{post.id}" title='Удаленить')
           .glyphicon.glyphicon-trash
 
 = paginate @posts
