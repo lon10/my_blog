@@ -16,7 +16,7 @@
         %a(href="#{edit_admin_post_path(post)}" title='Редактировать')
           .glyphicon.glyphicon-pencil
       %td
-        %a.delete_post(href='' id="#{post.id}" title='Удалить')
+        %a(href="#{admin_post_path(post)}" data-method='delete' title='Удалить' onclick='return confirm("Вы уверены?")')
           .glyphicon.glyphicon-trash
 
 = paginate @posts

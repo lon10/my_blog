@@ -10,11 +10,11 @@ class Admin::CommentsController < Admin::AdminController
 
     if(comment.delete)
       flash[:notice] = 'Комментарий успешно удалён'
-      render json: {result: true}
     else
       flash[:error] = 'Произошла ошибка'
-      render json: {result: false}
     end
+
+    redirect_to admin_post_comments_path(comment.post, comment)
   end
 
 end

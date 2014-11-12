@@ -45,11 +45,11 @@ class Admin::PostsController < Admin::AdminController
 
     if(post.delete)
       flash[:notice] = 'Пост успешно удалён'
-      render json: {result: true}
     else
       flash[:error] = 'Произошла ошибка'
-      render json: {result: false}
     end
+
+    redirect_to admin_posts_path
   end
 
   private

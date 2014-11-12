@@ -12,7 +12,7 @@
         %td= comment.name
         %td= comment.comment_preview
         %td
-          %a.delete_comment(href='' id="#{comment.id}" post_id="#{comment.post_id}")
+          %a(href="#{admin_post_comment_path(comment.post, comment)}" data-method='delete' title='Удалить' onclick='return confirm("Вы уверены?")')
             .glyphicon.glyphicon-trash
 
 = link_to('Назад', admin_posts_path, class: 'btn btn-default')
