@@ -21,5 +21,6 @@ module MyBlog
     config.i18n.default_locale = :ru
 
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+    config.autoload_paths += %W(#{config.root}/lib)
   end
 end
