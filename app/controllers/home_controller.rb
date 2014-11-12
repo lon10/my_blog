@@ -15,7 +15,7 @@ class HomeController < ApplicationController
     @comment = Comment.new(comment_params)
 
     if @comment.save
-      redirect_to home_post_path(comment_params[:post_id]), notice: 'Ваш комментарий добавлен'
+      redirect_to home_post_path(params[:id]), notice: 'Ваш комментарий добавлен'
     else
       show_post
       flash[:error] = 'Во время добавления комментария произошла ошибка'
