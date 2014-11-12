@@ -5,6 +5,11 @@ FactoryGirl.define do
     text 'text_ololo'
   end
 
+  factory :comment do
+    name 'some_name'
+    text 'some_text'
+  end
+
   factory :user do
     trait :with_admin_role do
       name 'admin'
