@@ -24,3 +24,4 @@ vendor/ruby
 .rvmrc
 
 /public/assets
+/public/uploads
