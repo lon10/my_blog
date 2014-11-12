@@ -7,7 +7,7 @@
       %td= format_date_time(post.created_at)
       %td= post.title
       %td
-        %a(href="")
+        %a(href="#{admin_post_comments_path(post)}")
           .glyphicon.glyphicon-comment
       %td
         %a(href="#{edit_admin_post_path(post)}")

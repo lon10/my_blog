@@ -1,0 +1,18 @@
+%h4
+  Комментарии к статье
+
+- if @comments.empty?
+  %p
+    К этой статье пока не добавлено ни одного комментария
+- else
+  %table.table.table-striped
+    - @comments.each do |comment|
+      %tr.active
+        %td= format_date_time(comment.created_at)
+        %td= comment.name
+        %td= "#{comment.text[0..70]}..."
+        %td
+          %a.delete_comment(href='' id="#{comment.id}" post_id="#{comment.post_id}")
+            .glyphicon.glyphicon-trash
+
+= link_to('Назад', admin_posts_path, class: 'btn btn-default')
