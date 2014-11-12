@@ -10,7 +10,7 @@
       %tr.active
         %td= format_date_time(comment.created_at)
         %td= comment.name
-        %td= "#{comment.text[0..70]}..."
+        %td= comment.comment_preview
         %td
           %a.delete_comment(href='' id="#{comment.id}" post_id="#{comment.post_id}")
             .glyphicon.glyphicon-trash
