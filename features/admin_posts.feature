@@ -4,29 +4,27 @@ Feature:
 
   Background:
     Given there is admin
+      And I signed in as admin
+
 
   Scenario: Pagination
-    Given I signed in as admin
-      And there is a few posts
+    Given there is a few posts
     When I am on the admin page
     Then I should see paging
 
   Scenario: Page browsing
-    Given I signed in as admin
-      And there is a few posts
+    Given there is a few posts
       And I am on the admin page
     When I follow 3th page
     Then I should see ten first post titles on page
 
   Scenario: I should be able to add new post
-    Given I signed in as admin
-      And I am on the admin page
+    Given I am on the admin page
     When I click on "Добавить пост"
     Then I should see "Добавление нового поста"
 
   Scenario: New post creating validation
-    Given I signed in as admin
-      And I am on the new post page
+    Given I am on the new post page
     When I press "Сохранить"
     Then I should see "Во время создания поста произошла ошибка"
       And I should see "Необходимо ввести название"
@@ -34,8 +32,7 @@ Feature:
 
   @javascript
   Scenario: I should be able to create post
-    Given I signed in as admin
-      And I am on the new post page
+    Given I am on the new post page
     When I fill in post content
       And I press "Сохранить"
     Then I should see "Пост добавлен"
@@ -44,16 +41,14 @@ Feature:
 
   @javascript
   Scenario: I should be able to edit post
-    Given I signed in as admin
-      And there is a post
+    Given there is a post
       And I am on the admin page
     When I click on edit button
     Then I should see "Редактирование поста"
 
   @javascript
   Scenario: Edit post
-    Given I signed in as admin
-      And there is a post
+    Given there is a post
       And I am on the last post editing page
     When I edit post content
       And I press "Сохранить"
@@ -63,8 +58,7 @@ Feature:
 
   @javascript
   Scenario: Edit post validation
-    Given I signed in as admin
-      And there is a post
+    Given there is a post
       And I am on the last post editing page
     When I erase post content
       And I press "Сохранить"
@@ -74,10 +68,16 @@ Feature:
 
   @javascript
   Scenario: I should be able to delete post
-    Given I signed in as admin
-      And there is a post
+    Given there is a post
       And I am on the admin page
     When I click on delete button
       And I confirm dialog
     Then I should see "Пост успешно удалён"
       And I should not see "title_ololo"
+
+  @javascript
+  Scenario: I should be able to preview post
+    Given there is a post
+      And I am on the admin page
+    When I click on post preview button
+    Then I should see post preview

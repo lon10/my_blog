@@ -54,3 +54,16 @@ Then(/^edited post should be correct$/) do
   expect(post.title).to eq('edited_title')
   expect(post.text).to include('edited_text')
 end
+
+When(/^I click on post preview button$/) do
+  page.find('.glyphicon-eye-open').click()
+end
+
+When(/^I should see post preview$/) do
+  post = Post.last
+
+  page.should have_content('Предпросмотр поста')
+  page.should have_content(post.title)
+  page.should have_content(post.text)
+end
+

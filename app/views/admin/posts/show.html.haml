@@ -1,0 +1,12 @@
+%h4
+  Предпросмотр поста
+
+.well
+  %h3
+    = @post.title
+  %p
+    = @post.text.html_safe
+  .small
+    = format_date(@post.created_at)
+
+= link_to('Назад', admin_path, class: 'btn btn-default')
