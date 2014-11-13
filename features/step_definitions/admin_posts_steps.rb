@@ -68,20 +68,20 @@ When(/^I should see post preview$/) do
 end
 
 When(/^I click on post publish button$/) do
-  page.find('.glyphicon-ok').click()
+  page.find('.glyphicon-remove').click()
 end
 
 Then(/^post should be published$/) do
   page.should have_content('Пост опубликован')
-  expect(Post.last.published?).to be_true
+  expect(Post.last).to be_published
 end
 
 When(/^I click on post unpublish button$/) do
-  page.find('.glyphicon-remove').click()
+  page.find('.glyphicon-ok').click()
 end
 
 Then(/^post should be unpublished$/) do
   page.should have_content('Пост снят с публикации')
-  expect(Post.last.published?).to be_false
+  expect(Post.last).to_not be_published
 end
 

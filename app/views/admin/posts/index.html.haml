@@ -9,6 +9,13 @@
       %td= format_date_time(post.created_at)
       %td= post.title
       %td
+        -if post.published?
+          %a(href="#{admin_post_unpublish_path(post)}" title='Опубликован')
+            .glyphicon.glyphicon-ok
+        -else
+          %a(href="#{admin_post_publish_path(post)}" title='Не опубликован')
+            .glyphicon.glyphicon-remove
+      %td
         %a(href="#{admin_post_comments_path(post)}" title='Редактировать комментарии')
           .glyphicon.glyphicon-comment
       %td

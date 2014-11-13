@@ -52,6 +52,30 @@ class Admin::PostsController < Admin::AdminController
     redirect_to admin_posts_path
   end
 
+  def publish
+    post = find_post
+
+    if(post.update_attribute(:published, true))
+      flash[:notice] = 'Пост опубликован'
+    else
+      flash[:error] = 'Произошла ошибка'
+    end
+
+    redirect_to admin_posts_path
+  end
+
+  def unpublish
+    post = find_post
+
+    if(post.update_attribute(:published, false))
+      flash[:notice] = 'Пост снят с публикации'
+    else
+      flash[:error] = 'Произошла ошибка'
+    end
+
+    redirect_to admin_posts_path
+  end
+
   private
 
   def post_params
@@ -59,7 +83,8 @@ class Admin::PostsController < Admin::AdminController
   end
 
   def find_post
-    @post = Post.find(params[:id])
+    id = params[:id] || params[:post_id]
+    @post = Post.find(id)
   end
 
 

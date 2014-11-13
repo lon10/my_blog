@@ -13,6 +13,9 @@ Rails.application.routes.draw do
 
     resources :posts do
       resources :comments, only: [:index, :destroy]
+
+      get 'publish' => 'posts#publish', as: 'publish'
+      get 'unpublish' => 'posts#unpublish', as: 'unpublish'
     end
   end
 
