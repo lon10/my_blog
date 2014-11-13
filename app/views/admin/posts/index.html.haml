@@ -1,3 +1,5 @@
+-title('Управление контентом')
+
 %p
   = link_to('Добавить пост', new_admin_post_path, class: 'btn btn-primary')
 
@@ -16,7 +18,7 @@
         %a(href="#{edit_admin_post_path(post)}" title='Редактировать')
           .glyphicon.glyphicon-pencil
       %td
-        %a(href="#{admin_post_path(post)}" data-method='delete' title='Удалить' onclick='return confirm("Вы уверены?")')
+        %a(href="#{admin_post_path(post)}" data-method='delete' title='Удалить' data-confirm='Вы уверены?')
           .glyphicon.glyphicon-trash
 
 = paginate @posts

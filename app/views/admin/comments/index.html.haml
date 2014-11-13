@@ -1,3 +1,5 @@
+-title('Управление контентом - Комментарии к статье')
+
 %h4
   Комментарии к статье
 
@@ -12,7 +14,7 @@
         %td= comment.name
         %td= comment.comment_preview
         %td
-          %a(href="#{admin_post_comment_path(comment.post, comment)}" data-method='delete' title='Удалить' onclick='return confirm("Вы уверены?")')
+          %a(href="#{admin_post_comment_path(comment.post, comment)}" data-method='delete' title='Удалить'  data-confirm='Вы уверены?')
             .glyphicon.glyphicon-trash
 
 = link_to('Назад', admin_posts_path, class: 'btn btn-default')
