@@ -1,0 +1,20 @@
+-title('Управление контентом - Комментарии к статье')
+
+%h4
+  Комментарии к статье
+
+- if @comments.empty?
+  %p
+    К этой статье пока не добавлено ни одного комментария
+- else
+  %table.table.table-striped
+    - @comments.each do |comment|
+      %tr.active
+        %td= format_date_time(comment.created_at)
+        %td= comment.name
+        %td= comment.comment_preview
+        %td
+          %a(href="#{admin_post_comment_path(comment.post, comment)}" data-method='delete' title='Удалить'  data-confirm='Вы уверены?')
+            .glyphicon.glyphicon-trash
+
+= link_to('Назад', admin_posts_path, class: 'btn btn-default')

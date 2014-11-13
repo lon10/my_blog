@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def title(page_title)
+    content_for(:title) { page_title }
+  end
+
   def text_preview(text)
     first_p = text.index('</p>').to_i
     if first_p != 0

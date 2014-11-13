@@ -11,7 +11,12 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/' => 'posts#index'
 
-    resources :posts
+    resources :posts do
+      resources :comments, only: [:index, :destroy]
+
+      get 'publish' => 'posts#publish', as: 'publish'
+      get 'unpublish' => 'posts#unpublish', as: 'unpublish'
+    end
   end
 
   devise_for :users, skip: [:registrations, :passwords]

@@ -1,3 +1,5 @@
+-title('Управление контентом')
+
 %p
   = link_to('Добавить пост', new_admin_post_path, class: 'btn btn-primary')
 
@@ -7,10 +9,23 @@
       %td= format_date_time(post.created_at)
       %td= post.title
       %td
-        %a(href="#{edit_admin_post_path(post)}" id="#{post.id}")
+        -if post.published?
+          %a(href="#{admin_post_unpublish_path(post)}" title='Опубликован')
+            .glyphicon.glyphicon-ok
+        -else
+          %a(href="#{admin_post_publish_path(post)}" title='Не опубликован')
+            .glyphicon.glyphicon-remove
+      %td
+        %a(href="#{admin_post_comments_path(post)}" title='Редактировать комментарии')
+          .glyphicon.glyphicon-comment
+      %td
+        %a(href="#{admin_post_path(post)}" title='Предпросмотр')
+          .glyphicon.glyphicon-eye-open
+      %td
+        %a(href="#{edit_admin_post_path(post)}" title='Редактировать')
           .glyphicon.glyphicon-pencil
       %td
-        %a.delete_post(href="" id="#{post.id}")
+        %a(href="#{admin_post_path(post)}" data-method='delete' title='Удалить' data-confirm='Вы уверены?')
           .glyphicon.glyphicon-trash
 
 = paginate @posts

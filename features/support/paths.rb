@@ -22,6 +22,8 @@ module NavigationHelpers
         new_admin_post_path
       when /^the last post editing\s?page$/
         edit_admin_post_path(Post.last)
+      when /^the existing post comments edit\s?page$/
+        admin_post_comments_path(Post.last)
       else
         begin
           page_name =~ /^the (.*) page$/

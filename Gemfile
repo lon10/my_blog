@@ -26,6 +26,10 @@ gem 'non-stupid-digest-assets'
 gem 'kaminari'
 gem 'kaminari-bootstrap'#, '~> 3.0.1'
 
+gem 'friendly_id', '~> 5.0.0'
+gem 'russian', '~> 0.6.0'
+gem 'babosa'
+
 group :development do
   gem 'zeus'
 end

@@ -67,3 +67,11 @@ Then(/^I should see paging$/) do
   page.should have_content("Дальше")
   page.should have_content("В конец")
 end
+
+Given(/^there is unpublished post$/) do
+  FactoryGirl.create(:post, published: false)
+end
+
+Then(/^I should not see unpublished post/) do
+  page.should_not have_content('title_ololo')
+end
