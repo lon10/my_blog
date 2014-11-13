@@ -72,6 +72,6 @@ Given(/^there is unpublished post$/) do
   FactoryGirl.create(:post, published: false)
 end
 
-Then(/^I should not see unpublished comment$/) do
+Then(/^I should not see unpublished post/) do
   page.should_not have_content('title_ololo')
 end

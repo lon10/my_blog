@@ -45,7 +45,7 @@ Feature:
     Then I should see "Ваш комментарий добавлен"
       And I should see comment content
 
-  Scenario: I should not see unpublished comment
+  Scenario: I should not see unpublished post
     Given there is unpublished post
     When I am on the home page
-    Then I should not see unpublished comment
+    Then I should not see unpublished post
