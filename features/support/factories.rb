@@ -3,6 +3,7 @@ FactoryGirl.define do
   factory :post do
     title 'title_ololo'
     text 'text_ololo'
+    published true
   end
 
   factory :comment do
