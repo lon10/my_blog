@@ -81,3 +81,18 @@ Feature:
       And I am on the admin page
     When I click on post preview button
     Then I should see post preview
+
+  @javascript
+  Scenario: I should be able to publish post
+    Given there is unpublished post
+      And I am on the admin page
+    When I click on post publish button
+    Then post should be published
+
+  @javascript
+  Scenario: I should be able to unpublish post
+    Given there is a post
+      And I am on the admin page
+    When I click on post unpublish button
+    Then post should be unpublished
+
