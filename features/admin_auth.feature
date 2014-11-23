@@ -1,3 +1,4 @@
+@javascript
 Feature:
   As admin
   I want to auth my self on admin page

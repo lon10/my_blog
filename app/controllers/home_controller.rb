@@ -8,6 +8,7 @@ class HomeController < ApplicationController
 
   def show
     show_post
+    raise ActiveRecord::RecordNotFound unless @post.published?
     @comment = Comment.new
   end
 

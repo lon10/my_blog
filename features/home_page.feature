@@ -1,3 +1,4 @@
+@javascript
 Feature:
   As a guest
   I want to see posts

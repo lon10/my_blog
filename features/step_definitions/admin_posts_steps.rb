@@ -85,3 +85,17 @@ Then(/^post should be unpublished$/) do
   expect(Post.last).to_not be_published
 end
 
+Then(/^post should be available$/) do
+  visit("/post/#{Post.last.id}")
+  page.should have_content('title_ololo')
+  page.should have_content('text_ololo')
+end
+
+
+Then(/^post should not be available$/) do
+  visit("/post/#{Post.last.id}")
+  page.should_not have_content('title_ololo')
+  page.should_not have_content('text_ololo')
+
+  page.should have_content('RecordNotFound')
+end
