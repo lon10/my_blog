@@ -22,6 +22,8 @@
     .form-group
       = f.submit 'Оставить комментарий', class: 'btn btn-default'
 
+%a(name='comments')
+
 - @post.comments.each do |comment|
   .comment
     .h4

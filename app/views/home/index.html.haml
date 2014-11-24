@@ -6,5 +6,7 @@
       = text_preview(post.text).html_safe
     .small
       = format_date(post.created_at)
+      - if post.comments.count != 0
+        = link_to("Комментариев: #{post.comments.count}", "#{home_post_path(post)}#comments")
 
 = paginate @posts
