@@ -5,6 +5,7 @@
     = @post.title
   %p
     = @post.text.html_safe
+  %hr
   .small
     = format_date(@post.created_at)
 
@@ -12,24 +13,27 @@
   Комментариев:
   = @post.comments.count
 
-.comment_form
-  = simple_form_for @comment, url: post_add_comment_path do |f|
-    = f.input :post_id, as: :hidden, input_html: { value: @post.id }
-    .form-group
-      = f.input :name, required: false, input_html: { class: 'form-control' }
-    .form-group
-      = f.input :text, required: false, input_html: { class: 'form-control comment_text_add' }
-    .form-group
-      = f.submit 'Оставить комментарий', class: 'btn btn-default'
+.panel.panel-success
+  .panel-heading
+    Новый комментарий
+  .panel-body
+    = simple_form_for @comment, url: post_add_comment_path do |f|
+      = f.input :post_id, as: :hidden, input_html: { value: @post.id }
+      .form-group
+        = f.input :name, required: false, input_html: { class: 'form-control string email required input-lg form-control' }
+      .form-group
+        = f.input :text, required: false, input_html: { class: 'form-control comment_text_add' }
+      .form-group
+        = f.submit 'Оставить комментарий', class: 'btn btn-default'
 
 %a(name='comments')
 
 - @post.comments.each do |comment|
-  .comment
-    .h4
-      &= comment.name
-    .small
-      = format_date_time(comment.created_at)
-    %p
+  .panel.panel-default
+    .panel-heading
+      .h4
+        &= comment.name
+        .small.pull-right
+          = format_date_time(comment.created_at)
+    .panel-body
       &= comment.text
-    %hr
