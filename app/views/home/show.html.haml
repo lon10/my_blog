@@ -22,7 +22,7 @@
       .form-group
         = f.input :name, required: false, input_html: { class: 'form-control string email required input-lg form-control' }
       .form-group
-        = f.input :text, required: false, input_html: { class: 'form-control comment_text_add' }
+        = f.input :text, required: false, input_html: { class: 'form-control comment_text_add', 'data-provide' => 'markdown' }
       .form-group
         = f.submit 'Оставить комментарий', class: 'btn btn-default'
 
@@ -36,4 +36,4 @@
         .small.pull-right
           = format_date_time(comment.created_at)
     .panel-body
-      &= comment.text
+      &= markdown(comment.text)

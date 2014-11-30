@@ -25,6 +25,8 @@ gem 'non-stupid-digest-assets'
 
 gem 'kaminari'
 gem 'kaminari-bootstrap'#, '~> 3.0.1'
+gem 'rails-bootstrap-markdown'
+gem 'redcarpet'
 
 gem 'friendly_id', '~> 5.0.0'
 gem 'russian', '~> 0.6.0'
