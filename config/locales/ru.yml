@@ -10,7 +10,7 @@ ru:
       post_preview:
         header: 'Предпросмотр поста'
       new_post:
-        header: 'Добавление поста'
+        header: 'Добавление нового поста'
       edit_post:
         header: 'Редактирование поста'
     titles:
