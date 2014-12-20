@@ -1,7 +1,7 @@
--title('Управление контентом - Предпросмотр поста')
+-title(t('views.titles.post_preview'))
 
 %h4
-  Предпросмотр поста
+  = t('views.admin.post_preview.header')
 
 .well
   %h3
@@ -11,4 +11,4 @@
   .small
     = format_date(@post.created_at)
 
-= link_to('Назад', admin_path, class: 'btn btn-default')
+= link_to(t('views.controls.back'), admin_path, class: 'btn btn-default')

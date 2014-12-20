@@ -1,6 +1,6 @@
--title('Управление контентом - Редактирование поста')
+-title(t('views.titles.edit_post'))
 
 %h4
-  Редактирование поста
+  = t('views.admin.edit_post.header')
 
 = render partial:  'form', locals: { post: @post, url: admin_post_path }

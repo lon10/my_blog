@@ -3,8 +3,24 @@ en:
     messages:
       main: 'Error'
   views:
+    admin:
+      comments:
+        header: 'Post Comments'
+        empty: 'There is no comments on this post'
+      post_preview:
+        header: 'Post preview'
+      new_post:
+        header: 'New post'
+      edit_post:
+        header: 'Edit post'
     titles:
       home: 'Programmer blog'
+      sign_in: 'Programmer blog - Sign in'
+      admin: 'Content management'
+      post_comments: 'Content management - Post comments'
+      post_preview: 'Content management - Post preview'
+      new_post: 'Content management - New post'
+      edit_post: 'Content management - Edit post'
     controls:
       home: 'Home'
       about: 'About blog'
@@ -14,6 +30,16 @@ en:
       new_comment: 'New comment'
       left_comment: 'Add comment'
       sign_in: 'Sign in'
+      back: 'Back'
+      delete: 'Delete'
+      are_you_sure: 'Are you sure?'
+      add_post: 'Add post'
+      published: 'Published'
+      unpublished: 'Unpublished'
+      edit_comments: 'Edit comments'
+      preview: 'Post preview'
+      edit: 'Edit'
+      save: 'Save'
   activerecord:
     errors:
       models:
