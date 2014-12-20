@@ -1,5 +1,13 @@
 ru:
+  errors:
+    messages:
+      main: 'Ошибка'
   views:
+    controls:
+      home: 'Главная'
+      about: 'О блоге'
+      admin: 'Управление контентом'
+      exit: 'Выйти'
     pagination:
       first: "&laquo; В начало"
       last: "В конец &raquo;"
@@ -15,6 +23,7 @@ ru:
               blank: 'Необходимо заполнить текст комментария'
             name:
               blank: 'Необходимо указать Ваше имя'
+          message: 'Во время добавления комментария произошла ошибка'
         post:
           attributes:
             title:
@@ -32,3 +41,17 @@ ru:
       post:
         title: 'Название'
         text: 'Текст поста'
+    comment:
+      messages:
+        saved: 'Ваш комментарий добавлен'
+        deleted: 'Комментарий успешно удалён'
+    post:
+      messages:
+        error: 'Произошла ошибка'
+        added: 'Пост добавлен'
+        add_error: 'Во время создания поста произошла ошибка'
+        updated: 'Пост отредактирован'
+        update_error: 'Во время редактирования поста произошла ошибка'
+        deleted: 'Пост успешно удалён'
+        published: 'Пост опубликован'
+        unpublished: 'Пост снят с публикации'

@@ -20,4 +20,31 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  errors:
+    messages:
+      main: 'Error'
+  views:
+    controls:
+      home: 'Home'
+      about: 'About blog'
+      admin: 'Content management'
+      exit: 'Exit'
+  activerecord:
+    errors:
+      models:
+        comment:
+          message: 'Error'
+    comment:
+      messages:
+        saved: 'Success'
+        deleted: 'Success'
+    post:
+      messages:
+        error: 'Error'
+        added: 'Post added'
+        add_error: 'Error'
+        updated: 'updated'
+        update_error: 'error'
+        deleted: 'deleted'
+        published: 'published'
+        unpublished: 'unpublished'

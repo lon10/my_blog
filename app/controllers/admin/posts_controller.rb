@@ -18,9 +18,9 @@ class Admin::PostsController < Admin::AdminController
     @post = Post.new(post_params)
 
     if(@post.save)
-      redirect_to admin_posts_path, notice: 'Пост добавлен'
+      redirect_to admin_posts_path, notice: t('activerecord.post.messages.added')
     else
-      flash[:error] = 'Во время создания поста произошла ошибка'
+      flash[:error] = t('activerecord.post.messages.add_error')
       render :new
     end
   end
@@ -33,9 +33,9 @@ class Admin::PostsController < Admin::AdminController
     find_post
 
     if(@post.update(post_params))
-      redirect_to admin_posts_path, notice: 'Пост отредактирован'
+      redirect_to admin_posts_path, notice: t('activerecord.post.messages.updated')
     else
-      flash[:error] = 'Во время редактирования поста произошла ошибка'
+      flash[:error] = t('activerecord.post.messages.update_error')
       render :edit
     end
   end
@@ -44,9 +44,9 @@ class Admin::PostsController < Admin::AdminController
     post = find_post
 
     if(post.delete)
-      flash[:notice] = 'Пост успешно удалён'
+      flash[:notice] = t('activerecord.post.messages.deleted')
     else
-      flash[:error] = 'Произошла ошибка'
+      flash[:error] = t('activerecord.post.messages.error')
     end
 
     redirect_to admin_posts_path
@@ -56,9 +56,9 @@ class Admin::PostsController < Admin::AdminController
     post = find_post
 
     if(post.update_attribute(:published, true))
-      flash[:notice] = 'Пост опубликован'
+      flash[:notice] = t('activerecord.post.messages.published')
     else
-      flash[:error] = 'Произошла ошибка'
+      flash[:error] = t('activerecord.post.messages.error')
     end
 
     redirect_to admin_posts_path
@@ -68,9 +68,9 @@ class Admin::PostsController < Admin::AdminController
     post = find_post
 
     if(post.update_attribute(:published, false))
-      flash[:notice] = 'Пост снят с публикации'
+      flash[:notice] = t('activerecord.post.messages.unpublished')
     else
-      flash[:error] = 'Произошла ошибка'
+      flash[:error] = t('activerecord.post.messages.error')
     end
 
     redirect_to admin_posts_path
