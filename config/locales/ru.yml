@@ -10,6 +10,10 @@ ru:
       about: 'О блоге'
       admin: 'Управление контентом'
       exit: 'Выйти'
+      comments_count: 'Комментариев'
+      new_comment: 'Новый комментарий'
+      left_comment: 'Оставить комментарий'
+      sign_in: 'Войти'
     pagination:
       first: "&laquo; В начало"
       last: "В конец &raquo;"

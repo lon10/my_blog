@@ -10,12 +10,12 @@
     = format_date(@post.created_at)
 
 .h5
-  Комментариев:
+  = "#{t('views.controls.comments_count')}:"
   = @post.comments.count
 
 .panel.panel-default
   .panel-heading
-    Новый комментарий
+    = t('views.controls.new_comment')
   .panel-body
     = simple_form_for @comment, url: post_add_comment_path do |f|
       = f.input :post_id, as: :hidden, input_html: { value: @post.id }
@@ -24,7 +24,7 @@
       .form-group
         = f.input :text, required: false, input_html: { class: 'form-control comment_text_add', 'data-provide' => 'markdown' }
       .form-group
-        = f.submit 'Оставить комментарий', class: 'btn btn-default'
+        = f.submit t('views.controls.left_comment'), class: 'btn btn-default'
 
 %a(name='comments')
 
