@@ -3,6 +3,8 @@ ru:
     messages:
       main: 'Ошибка'
   views:
+    titles:
+      home: 'Заметки программиста'
     controls:
       home: 'Главная'
       about: 'О блоге'

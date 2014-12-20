@@ -24,6 +24,8 @@ en:
     messages:
       main: 'Error'
   views:
+    titles:
+      home: 'Programmer blog'
     controls:
       home: 'Home'
       about: 'About blog'
