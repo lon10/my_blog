@@ -1,3 +1,4 @@
+@javascript
 Feature:
   As admin
   I want to manage posts
@@ -5,7 +6,6 @@ Feature:
   Background:
     Given there is admin
       And I signed in as admin
-
 
   Scenario: Pagination
     Given there is a few posts
@@ -30,7 +30,6 @@ Feature:
       And I should see "Необходимо ввести название"
       And I should see "Необходимо заполнить текст поста"
 
-  @javascript
   Scenario: I should be able to create post
     Given I am on the new post page
     When I fill in post content
@@ -39,14 +38,12 @@ Feature:
       And I should see "new_title"
       And created post should be correct
 
-  @javascript
   Scenario: I should be able to edit post
     Given there is a post
       And I am on the admin page
     When I click on edit button
     Then I should see "Редактирование поста"
 
-  @javascript
   Scenario: Edit post
     Given there is a post
       And I am on the last post editing page
@@ -56,7 +53,6 @@ Feature:
       And I should see "edited_title"
       And edited post should be correct
 
-  @javascript
   Scenario: Edit post validation
     Given there is a post
       And I am on the last post editing page
@@ -66,7 +62,6 @@ Feature:
       And I should see "Необходимо ввести название"
       And I should see "Необходимо заполнить текст поста"
 
-  @javascript
   Scenario: I should be able to delete post
     Given there is a post
       And I am on the admin page
@@ -75,24 +70,23 @@ Feature:
     Then I should see "Пост успешно удалён"
       And I should not see "title_ololo"
 
-  @javascript
   Scenario: I should be able to preview post
     Given there is a post
       And I am on the admin page
     When I click on post preview button
     Then I should see post preview
 
-  @javascript
   Scenario: I should be able to publish post
     Given there is unpublished post
       And I am on the admin page
     When I click on post publish button
     Then post should be published
+      And post should be available
 
-  @javascript
+  @allow-rescue
   Scenario: I should be able to unpublish post
     Given there is a post
       And I am on the admin page
     When I click on post unpublish button
     Then post should be unpublished
-
+      And post should not be available

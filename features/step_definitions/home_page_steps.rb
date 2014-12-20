@@ -75,3 +75,7 @@ end
 Then(/^I should not see unpublished post/) do
   page.should_not have_content('title_ololo')
 end
+
+Then(/^I should see comments counter/) do
+  page.should have_content("Комментариев: #{Post.last.comments.count}")
+end

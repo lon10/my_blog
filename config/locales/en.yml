@@ -1,23 +1,61 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  errors:
+    messages:
+      main: 'Error'
+  views:
+    admin:
+      comments:
+        header: 'Post Comments'
+        empty: 'There is no comments on this post'
+      post_preview:
+        header: 'Post preview'
+      new_post:
+        header: 'New post'
+      edit_post:
+        header: 'Edit post'
+    titles:
+      home: 'Programmer blog'
+      sign_in: 'Programmer blog - Sign in'
+      admin: 'Content management'
+      post_comments: 'Content management - Post comments'
+      post_preview: 'Content management - Post preview'
+      new_post: 'Content management - New post'
+      edit_post: 'Content management - Edit post'
+    controls:
+      home: 'Home'
+      about: 'About blog'
+      admin: 'Content management'
+      exit: 'Exit'
+      comments_count: 'Comments'
+      new_comment: 'New comment'
+      left_comment: 'Add comment'
+      sign_in: 'Sign in'
+      back: 'Back'
+      delete: 'Delete'
+      are_you_sure: 'Are you sure?'
+      add_post: 'Add post'
+      published: 'Published'
+      unpublished: 'Unpublished'
+      edit_comments: 'Edit comments'
+      preview: 'Post preview'
+      edit: 'Edit'
+      save: 'Save'
+  activerecord:
+    errors:
+      models:
+        comment:
+          message: 'Error'
+    comment:
+      messages:
+        saved: 'Success'
+        deleted: 'Success'
+    post:
+      messages:
+        error: 'Error'
+        added: 'Post added'
+        add_error: 'Error'
+        updated: 'updated'
+        update_error: 'error'
+        deleted: 'deleted'
+        published: 'published'
+        unpublished: 'unpublished'

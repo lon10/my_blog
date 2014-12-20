@@ -25,3 +25,5 @@ vendor/ruby
 
 /public/assets
 /public/uploads
+
+/app/assets/javascripts/yandex_metrika.js.coffee

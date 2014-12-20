@@ -8,6 +8,7 @@ class HomeController < ApplicationController
 
   def show
     show_post
+    raise ActiveRecord::RecordNotFound unless @post.published?
     @comment = Comment.new
   end
 
@@ -15,10 +16,10 @@ class HomeController < ApplicationController
     @comment = Comment.new(comment_params)
 
     if @comment.save
-      redirect_to home_post_path(params[:id]), notice: 'Ваш комментарий добавлен'
+      redirect_to home_post_path(params[:id]), notice: t('activerecord.comment.messages.saved')
     else
       show_post
-      flash[:error] = 'Во время добавления комментария произошла ошибка'
+      flash[:error] = t('activerecord.errors.models.comment.message')
       render :show
     end
   end

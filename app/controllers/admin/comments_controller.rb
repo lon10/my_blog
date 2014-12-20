@@ -9,9 +9,9 @@ class Admin::CommentsController < Admin::AdminController
     comment = Comment.find(params[:id])
 
     if(comment.delete)
-      flash[:notice] = 'Комментарий успешно удалён'
+      flash[:notice] = t('activerecord.comment.messages.deleted')
     else
-      flash[:error] = 'Произошла ошибка'
+      flash[:error] = t('errors.messages.main')
     end
 
     redirect_to admin_post_comments_path(comment.post, comment)

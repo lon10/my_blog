@@ -1,3 +1,4 @@
+@javascript
 Feature:
   As a guest
   I want to see posts
@@ -49,3 +50,14 @@ Feature:
     Given there is unpublished post
     When I am on the home page
     Then I should not see unpublished post
+
+  Scenario: I should not see comments counter when it 0
+    Given there is a post
+    When I am on the home page
+    Then I should not see "Комментариев:"
+
+  Scenario: I should see comments counter when it not 0
+    Given there is a post
+      And there is a few comments
+    When I am on the home page
+    Then I should see comments counter

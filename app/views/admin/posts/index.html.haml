@@ -1,7 +1,7 @@
--title('Управление контентом')
+-title(t('views.titles.admin'))
 
 %p
-  = link_to('Добавить пост', new_admin_post_path, class: 'btn btn-primary')
+  = link_to(t('views.controls.add_post'), new_admin_post_path, class: 'btn btn-primary')
 
 %table.table.table-striped
   - @posts.each do |post|
@@ -10,22 +10,22 @@
       %td= post.title
       %td
         -if post.published?
-          %a(href="#{admin_post_unpublish_path(post)}" title='Опубликован')
+          %a(href="#{admin_post_unpublish_path(post)}" title="#{t('views.controls.published')}")
             .glyphicon.glyphicon-ok
         -else
-          %a(href="#{admin_post_publish_path(post)}" title='Не опубликован')
+          %a(href="#{admin_post_publish_path(post)}" title="#{t('views.controls.unpublished')}")
             .glyphicon.glyphicon-remove
       %td
-        %a(href="#{admin_post_comments_path(post)}" title='Редактировать комментарии')
+        %a(href="#{admin_post_comments_path(post)}" title="#{t('views.controls.edit_comments')}")
           .glyphicon.glyphicon-comment
       %td
-        %a(href="#{admin_post_path(post)}" title='Предпросмотр')
+        %a(href="#{admin_post_path(post)}" title="#{t('views.controls.preview')}")
           .glyphicon.glyphicon-eye-open
       %td
-        %a(href="#{edit_admin_post_path(post)}" title='Редактировать')
+        %a(href="#{edit_admin_post_path(post)}" title="#{t('views.controls.edit')}")
           .glyphicon.glyphicon-pencil
       %td
-        %a(href="#{admin_post_path(post)}" data-method='delete' title='Удалить' data-confirm='Вы уверены?')
+        %a(href="#{admin_post_path(post)}" data-method='delete' title="#{t('views.controls.delete')}" data-confirm="#{t('views.controls.are_you_sure')}")
           .glyphicon.glyphicon-trash
 
 = paginate @posts
