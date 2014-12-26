@@ -12,6 +12,7 @@
 /config/cucumber.yml
 /config/database.yml
 /config/secrets.yml
+/config/telegram.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
