@@ -12,6 +12,8 @@ class Comment < ActiveRecord::Base
   protected
 
   def send_telegram_message
-    TelegramMessageService.instance.send("#{name} added new comment to <#{post.title}> - #{text}")
+    if Rails.env == 'production'
+      TelegramMessageService.instance.send("#{name} added new comment to <#{post.title}> - #{text}")
+    end
   end
 end
