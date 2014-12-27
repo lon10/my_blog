@@ -11,6 +11,7 @@
     - @comments.each do |comment|
       %tr.active
         %td= format_date_time(comment.created_at)
+        %td= comment.remote_address
         %td= comment.name
         %td= comment.comment_preview
         %td
