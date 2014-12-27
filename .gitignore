@@ -28,3 +28,6 @@ vendor/ruby
 /public/uploads
 
 /app/assets/javascripts/yandex_metrika.js.coffee
+
+.telegram-cli/
+tg/
