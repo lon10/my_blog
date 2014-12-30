@@ -31,3 +31,5 @@ vendor/ruby
 
 .telegram-cli/
 tg/
+
+public/demo
