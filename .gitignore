@@ -34,3 +34,5 @@ app/assets/javascripts/google_analytics.js.coffee
 tg/
 
 public/demo
+
+public/cv
