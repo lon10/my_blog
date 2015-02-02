@@ -15,6 +15,8 @@ class HomeController < ApplicationController
   def add_comment
     @comment = Comment.new(comment_params)
 
+    @comment.remote_address = (request.remote_ip)
+
     if @comment.save
       redirect_to home_post_path(params[:id]), notice: t('activerecord.comment.messages.saved')
     else

@@ -12,6 +12,7 @@
 /config/cucumber.yml
 /config/database.yml
 /config/secrets.yml
+/config/telegram.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
@@ -27,3 +28,11 @@ vendor/ruby
 /public/uploads
 
 /app/assets/javascripts/yandex_metrika.js.coffee
+app/assets/javascripts/google_analytics.js.coffee
+
+.telegram-cli/
+tg/
+
+public/demo
+
+public/cv

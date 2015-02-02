@@ -21,4 +21,6 @@ Rails.application.routes.draw do
 
   devise_for :users, skip: [:registrations, :passwords]
 
+  get '/en/cv' => 'cv#en', as: 'en_cv'
+  get '/ru/cv' => 'cv#ru', as: 'ru_cv'
 end
