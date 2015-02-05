@@ -24,15 +24,15 @@ vendor/ruby
 /.idea
 .rvmrc
 
-/public/assets
-/public/uploads
+public/assets
+public/uploads
+public/demo
+public/cv
 
-/app/assets/javascripts/yandex_metrika.js.coffee
+app/assets/javascripts/yandex_metrika.js.coffee
 app/assets/javascripts/google_analytics.js.coffee
 
 .telegram-cli/
 tg/
 
-public/demo
-
-public/cv
+coverage
