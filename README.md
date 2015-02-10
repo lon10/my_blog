@@ -1,3 +1,6 @@
+[![Code Climate](https://codeclimate.com/repos/54d345a0695680305a005399/badges/f129e412421cdba9f0cc/gpa.svg)](https://codeclimate.com/repos/54d345a0695680305a005399/feed)
+[![Test Coverage](https://codeclimate.com/repos/54d345a0695680305a005399/badges/f129e412421cdba9f0cc/coverage.svg)](https://codeclimate.com/repos/54d345a0695680305a005399/feed)
+
 ####To get this thing work:
 
     1. $ git clone https://github.com/lon10/my_blog.git

@@ -24,15 +24,6 @@ module NavigationHelpers
         edit_admin_post_path(Post.last)
       when /^the existing post comments edit\s?page$/
         admin_post_comments_path(Post.last)
-      else
-        begin
-          page_name =~ /^the (.*) page$/
-          path_components = $1.split(/\s+/)
-          self.send(path_components.push('path').join('_').to_sym)
-        rescue NoMethodError, ArgumentError
-          raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
-                    "Now, go and add a mapping in #{__FILE__}"
-        end
     end
   end
 

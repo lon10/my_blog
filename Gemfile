@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.5'
+ruby '2.1.3'
 
 gem 'rails', '4.1.7'
 gem 'sqlite3'
@@ -43,13 +43,15 @@ group :development do
 end
 
 group :test do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'spreewald'
   gem 'shoulda-matchers'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'simplecov'
+  gem 'codeclimate-test-reporter', require: false
 end
 
 group :development, :test do
