@@ -10,6 +10,7 @@ require 'rspec/rails'
 require 'shoulda/matchers'
 require 'spreewald/all_steps'
 require 'simplecov'
+require "codeclimate-test-reporter"
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -62,3 +63,4 @@ end
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
 SimpleCov.start
+CodeClimate::TestReporter.start

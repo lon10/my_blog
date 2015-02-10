@@ -39,7 +39,7 @@ group :development do
 end
 
 group :test do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'spreewald'
@@ -47,6 +47,7 @@ group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'simplecov'
+  gem 'codeclimate-test-reporter', require: false
 end
 
 group :development, :test do
