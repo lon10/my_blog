@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Comment do
-  let (:post) {FactoryGirl.create(:post)}
+  let(:post) { FactoryGirl.create(:post) }
 
   before do
     allow(Rails).to receive(:env).and_return(ActiveSupport::StringInquirer.new('production'))

@@ -1,15 +1,6 @@
-# Put this into features/support and require it in your env.rb
-#
 module NavigationHelpers
-  # Maps a name to a path. Used by the
-  #
-  #   When /^I go to (.+)$/ do |page_name|
-  #
-  # step definition in web_steps.rb
-  #
   def path_to(page_name)
     case page_name
-
       when /^the home\s?page$/
         root_path
       when /^the existing post\s?page$/
@@ -26,8 +17,6 @@ module NavigationHelpers
         admin_post_comments_path(Post.last)
     end
   end
-
 end
 
 World(NavigationHelpers)
-

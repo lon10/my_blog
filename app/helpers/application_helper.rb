@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def title(page_title)
     content_for(:title) { page_title }
   end
@@ -26,5 +25,4 @@ module ApplicationHelper
     }
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
   end
-
 end

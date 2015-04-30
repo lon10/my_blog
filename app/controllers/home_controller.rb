@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-
   def index
     page = params[:page]
 
@@ -8,7 +7,7 @@ class HomeController < ApplicationController
 
   def show
     show_post
-    raise ActiveRecord::RecordNotFound unless @post.published?
+    fail ActiveRecord::RecordNotFound unless @post.published?
     @comment = Comment.new
   end
 
@@ -36,5 +35,4 @@ class HomeController < ApplicationController
   def comment_params
     params.require(:comment).permit(:name, :text, :post_id)
   end
-
 end

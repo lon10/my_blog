@@ -1,5 +1,4 @@
 class Admin::CommentsController < Admin::AdminController
-
   def index
     post = Post.find(params[:post_id])
     @comments = post.comments
@@ -8,7 +7,7 @@ class Admin::CommentsController < Admin::AdminController
   def destroy
     comment = Comment.find(params[:id])
 
-    if(comment.delete)
+    if comment.delete
       flash[:notice] = t('activerecord.comment.messages.deleted')
     else
       flash[:error] = t('errors.messages.main')
@@ -16,5 +15,4 @@ class Admin::CommentsController < Admin::AdminController
 
     redirect_to admin_post_comments_path(comment.post, comment)
   end
-
 end

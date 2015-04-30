@@ -21,12 +21,12 @@ class Post < ActiveRecord::Base
   end
 
   def self.find(id_or_slug)
-    self.find_by_id(id_or_slug) || self.find_by_slug(id_or_slug)
+    find_by_id(id_or_slug) || find_by_slug(id_or_slug)
   end
 
   def validate_title
     if title_is_number?
-      errors.add(:title, 'Название не может быть числом')
+      errors.add(:title, t('activerecord.post.validation.can_not_be_number'))
     end
   end
 

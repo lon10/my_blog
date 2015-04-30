@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   factory :post do
     title 'title_ololo'
     text 'text_ololo'
@@ -18,5 +17,4 @@ FactoryGirl.define do
       password 'password'
     end
   end
-
 end
