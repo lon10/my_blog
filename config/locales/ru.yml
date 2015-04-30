@@ -87,3 +87,5 @@ ru:
         deleted: 'Пост успешно удалён'
         published: 'Пост опубликован'
         unpublished: 'Пост снят с публикации'
+      validation:
+        can_not_be_number: 'Название не может быть числом!'

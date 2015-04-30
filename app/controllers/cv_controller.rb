@@ -1,5 +1,3 @@
-#curriculum_vitae
-
 class CvController < ApplicationController
   def en
     cv = File.join(Rails.root, 'public/cv/curriculum_vitae_en.pdf')

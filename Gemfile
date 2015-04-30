@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.1.3'
+ruby '2.1.5'
 
 gem 'rails', '4.1.7'
-gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -13,26 +12,23 @@ gem 'devise'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
-
 gem 'jquery-rails'
 gem 'therubyracer'
-gem 'less-rails' 
+gem 'less-rails'
 gem 'twitter-bootstrap-rails'
-
 gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'activesupport-json_encoder', github: 'rails/activesupport-json_encoder'
 gem 'non-stupid-digest-assets'
-
 gem 'kaminari'
-gem 'kaminari-bootstrap'#, '~> 3.0.1'
+gem 'kaminari-bootstrap'
 gem 'rails-bootstrap-markdown'
 gem 'redcarpet'
-
 gem 'friendly_id', '~> 5.0.0'
 gem 'russian', '~> 0.6.0'
 gem 'babosa'
+gem 'rubocop', require: false
 
 gem 'friendly_id', '~> 5.0.0'
 gem 'russian', '~> 0.6.0'

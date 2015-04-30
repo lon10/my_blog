@@ -59,3 +59,5 @@ en:
         deleted: 'deleted'
         published: 'published'
         unpublished: 'unpublished'
+      validation:
+        can_not_be_number: 'Title can not be a number!'

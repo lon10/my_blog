@@ -1,0 +1,15 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - db/schema.rb
+    - lib/transliteration.rb
+    - 'db/migrate/*'
+    - lib/tasks/cucumber.rake
+    - config/initializers/devise.rb
+    - config/initializers/ckeditor.rb
+    - config/initializers/simple_form.rb
+Documentation:
+  Enabled: false
+
+LineLength:
+  Max: 120
