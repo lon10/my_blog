@@ -25,4 +25,13 @@ module ApplicationHelper
     }
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
   end
+
+  def comments_count(post)
+    count = post.comments.count
+    if count > 0
+      count.to_s
+    else
+      ''
+    end
+  end
 end

@@ -29,11 +29,11 @@ Then(/^I should see all post comments$/) do
 end
 
 When(/^I click on edit post comments$/) do
-  page.find('.glyphicon-comment').click()
+  page.find('.glyphicon-comment').click
 end
 
 When(/^I delete comment$/) do
-  page.find('.glyphicon-trash').click()
+  page.find('.glyphicon-trash').click
 end
 
 Then(/^comment should be deleted$/) do
@@ -41,5 +41,10 @@ Then(/^comment should be deleted$/) do
   page.should have_content('К этой статье пока не добавлено ни одного комментария')
   page.should_not have_content('some_name')
   page.should_not have_content('some_text')
+
+end
+
+Then(/^I should see post count$/) do
+  page.find('.comment-count').should have_content('5')
 
 end

@@ -36,11 +36,11 @@ When(/^I confirm dialog$/) do
 end
 
 When(/^I click on edit button$/) do
-  page.find('.glyphicon-pencil').click()
+  page.find('.glyphicon-pencil').click
 end
 
 When(/^I click on delete button$/) do
-  page.find('.glyphicon-trash').click()
+  page.find('.glyphicon-trash').click
 end
 
 Then(/^created post should be correct$/) do
@@ -56,7 +56,7 @@ Then(/^edited post should be correct$/) do
 end
 
 When(/^I click on post preview button$/) do
-  page.find('.glyphicon-eye-open').click()
+  page.find('.glyphicon-eye-open').click
 end
 
 When(/^I should see post preview$/) do
@@ -68,7 +68,7 @@ When(/^I should see post preview$/) do
 end
 
 When(/^I click on post publish button$/) do
-  page.find('.glyphicon-remove').click()
+  page.find('.glyphicon-remove').click
 end
 
 Then(/^post should be published$/) do
@@ -77,7 +77,7 @@ Then(/^post should be published$/) do
 end
 
 When(/^I click on post unpublish button$/) do
-  page.find('.glyphicon-ok').click()
+  page.find('.glyphicon-ok').click
 end
 
 Then(/^post should be unpublished$/) do

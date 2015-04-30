@@ -14,6 +14,11 @@ Feature:
     When I click on edit post comments
     Then I should see all post comments
 
+  Scenario: I should see comments count near label
+    Given there is a few comments
+    When I am on the admin page
+    Then I should see post count
+
   Scenario: I should be able to delete all post comments
     Given there is a comment
       And I am on the existing post comments edit page

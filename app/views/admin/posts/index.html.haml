@@ -18,6 +18,8 @@
       %td
         %a(href="#{admin_post_comments_path(post)}" title="#{t('views.controls.edit_comments')}")
           .glyphicon.glyphicon-comment
+        %sup.comment-count
+          = comments_count(post)
       %td
         %a(href="#{admin_post_path(post)}" title="#{t('views.controls.preview')}")
           .glyphicon.glyphicon-eye-open
