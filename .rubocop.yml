@@ -1,0 +1,10 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - db/schema.rb
+    - lib/transliteration.rb
+Documentation:
+  Enabled: false
+
+LineLength:
+  Max: 120
