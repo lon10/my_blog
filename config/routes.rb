@@ -15,6 +15,9 @@ Rails.application.routes.draw do
 
       get 'publish' => 'posts#publish', as: 'publish'
       get 'unpublish' => 'posts#unpublish', as: 'unpublish'
+
+      get 'enable_comments' => 'posts#enable_comments', as: 'enable_comments'
+      get 'disable_comments' => 'posts#disable_comments', as: 'disable_comments'
     end
   end
 

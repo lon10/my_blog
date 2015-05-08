@@ -9,32 +9,10 @@
   .small
     = format_date(@post.created_at)
 
-.h5
-  = "#{t('views.controls.comments_count')}:"
-  = @post.comments.count
-
-.panel.panel-default
-  .panel-heading
-    = t('views.controls.new_comment')
-  .panel-body
-    = simple_form_for @comment, url: post_add_comment_path do |f|
-      = f.input :post_id, as: :hidden, input_html: { value: @post.id }
-      .form-group
-        = f.input :name, required: false, input_html: { class: 'form-control string email required input-lg form-control' }
-      .form-group
-        = f.input :text, required: false, input_html: { class: 'form-control comment_text_add', 'data-provide' => 'markdown' }
-      .form-group
-        = f.submit t('views.controls.left_comment'), class: 'btn btn-default'
-
-%a(name='comments')
-
-- @post.comments.each do |comment|
+- if @post.commentable?
+  = render 'comments'
+- else
   .panel.panel-default
     .panel-heading
-      .h4
-        &= comment.name
-        .small.pull-right
-          = format_date_time(comment.created_at)
-    .panel-body
-      &= markdown(comment.text)
-%script
+      .notification
+        = t('views.controls.uncommentable')

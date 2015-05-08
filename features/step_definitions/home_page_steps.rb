@@ -2,6 +2,14 @@ Given(/^there is a post$/) do
   FactoryGirl.create(:post)
 end
 
+Given(/^there is commentable post$/) do
+  FactoryGirl.create(:post, commentable: true)
+end
+
+Given(/^there is uncommentable post$/) do
+  FactoryGirl.create(:post, commentable: false)
+end
+
 Given(/^there is a few posts$/) do
   30.times do |index|
     FactoryGirl.create(:post,

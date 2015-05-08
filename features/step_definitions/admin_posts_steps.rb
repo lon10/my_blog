@@ -99,3 +99,32 @@ Then(/^post should not be available$/) do
 
   page.should have_content('RecordNotFound')
 end
+
+When(/^I click on enable comments button$/) do
+  page.find('.glyphicon-ok-circle').click
+end
+
+When(/^I click on disable comments button$/) do
+  page.find('.glyphicon-remove-circle').click
+end
+
+Then(/^post should be uncommentable$/) do
+  page.should have_content('Обсуждение выключено для этой статьи')
+  expect(Post.last).to_not be_commentable
+end
+
+Then(/^post should be commentable$/) do
+  page.should have_content('Обсуждение включено для этой статьи')
+  expect(Post.last).to be_commentable
+end
+
+Then(/^comments should be unavailable$/) do
+  visit("/post/#{Post.last.id}")
+  page.should_not have_content('Новый комментарий')
+  page.should have_content('Обсуждение недоступно')
+end
+
+Then(/^comments should be available$/) do
+  visit("/post/#{Post.last.id}")
+  page.should have_content('Новый комментарий')
+end

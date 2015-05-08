@@ -90,3 +90,17 @@ Feature:
     When I click on post unpublish button
     Then post should be unpublished
       And post should not be available
+
+  Scenario: I should disable comments
+    Given there is commentable post
+      And I am on the admin page
+    When I click on enable comments button
+    Then post should be uncommentable
+      And comments should be unavailable
+
+  Scenario: I should enable comments
+    Given there is uncommentable post
+      And I am on the admin page
+    When I click on disable comments button
+    Then post should be commentable
+      And comments should be available
