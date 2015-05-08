@@ -79,6 +79,7 @@ ru:
       messages:
         saved: 'Ваш комментарий добавлен'
         deleted: 'Комментарий успешно удалён'
+        multiple_deleted: 'Комментарии успешно удалены'
     post:
       messages:
         error: 'Произошла ошибка'

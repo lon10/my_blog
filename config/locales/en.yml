@@ -51,6 +51,7 @@ en:
       messages:
         saved: 'Success'
         deleted: 'Success'
+        multiple_deleted: 'Success'
     post:
       messages:
         error: 'Error'

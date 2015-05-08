@@ -11,7 +11,11 @@ Rails.application.routes.draw do
     get '/' => 'posts#index'
 
     resources :posts do
-      resources :comments, only: [:index, :destroy]
+      resources :comments, only: [:index, :destroy] do
+        collection do
+          delete 'destroy_multiple'
+        end
+      end
 
       get 'publish' => 'posts#publish', as: 'publish'
       get 'unpublish' => 'posts#unpublish', as: 'unpublish'
