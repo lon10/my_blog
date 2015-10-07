@@ -47,5 +47,12 @@ end
 
 Then(/^I should see post count$/) do
   page.find('.comment-count').should have_content('5')
+end
 
+When(/^I do stupid things with comments$/) do
+  page.find('.delete_btn').click
+end
+
+Then(/^I should see error$/) do
+  page.should have_content('Ошибка')
 end

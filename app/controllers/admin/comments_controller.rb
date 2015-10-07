@@ -5,7 +5,7 @@ class Admin::CommentsController < Admin::AdminController
   end
 
   def destroy_multiple
-    if Comment.destroy(params[:comments])
+    if params[:comments] && Comment.destroy(params[:comments])
       flash[:notice] = t('activerecord.comment.messages.multiple_deleted')
     else
       flash[:error] = t('errors.messages.main')

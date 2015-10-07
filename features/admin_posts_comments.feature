@@ -24,3 +24,9 @@ Feature:
       And I am on the existing post comments edit page
     When I delete comment
     Then comment should be deleted
+
+  Scenario: I should see error message when I'm an idiot
+    Given there is a comment
+      And I am on the existing post comments edit page
+    When I do stupid things with comments
+    Then I should see error
