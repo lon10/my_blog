@@ -37,6 +37,8 @@ ru:
       published: 'Опубликован'
       unpublished: 'Не опубликован'
       edit_comments: 'Редактировать комментарии'
+      commentable: 'Обсуждение доступно'
+      uncommentable: 'Обсуждение недоступно'
       preview: 'Предпросмотр'
       edit: 'Редактировать'
       save: 'Сохранить'
@@ -77,6 +79,7 @@ ru:
       messages:
         saved: 'Ваш комментарий добавлен'
         deleted: 'Комментарий успешно удалён'
+        multiple_deleted: 'Комментарии успешно удалены'
     post:
       messages:
         error: 'Произошла ошибка'
@@ -87,5 +90,7 @@ ru:
         deleted: 'Пост успешно удалён'
         published: 'Пост опубликован'
         unpublished: 'Пост снят с публикации'
+        enable_comments: 'Обсуждение включено для этой статьи'
+        disable_comments: 'Обсуждение выключено для этой статьи'
       validation:
         can_not_be_number: 'Название не может быть числом!'

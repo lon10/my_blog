@@ -16,8 +16,17 @@
           %a(href="#{admin_post_publish_path(post)}" title="#{t('views.controls.unpublished')}")
             .glyphicon.glyphicon-remove
       %td
+        -if post.commentable?
+          %a(href="#{admin_post_disable_comments_path(post)}" title="#{t('views.controls.commentable')}")
+            .glyphicon.glyphicon-ok-circle
+        -else
+          %a(href="#{admin_post_enable_comments_path(post)}" title="#{t('views.controls.uncommentable')}")
+            .glyphicon.glyphicon-remove-circle
+      %td
         %a(href="#{admin_post_comments_path(post)}" title="#{t('views.controls.edit_comments')}")
           .glyphicon.glyphicon-comment
+        %sup.comment-count
+          = comments_count(post)
       %td
         %a(href="#{admin_post_path(post)}" title="#{t('views.controls.preview')}")
           .glyphicon.glyphicon-eye-open

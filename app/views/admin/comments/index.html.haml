@@ -7,6 +7,7 @@
   %p
     = t('views.admin.comments.empty')
 - else
+= form_tag destroy_multiple_admin_post_comments_path, method: :delete do
   %table.table.table-striped
     - @comments.each do |comment|
       %tr.active
@@ -15,7 +16,9 @@
         %td= comment.name
         %td= comment.comment_preview
         %td
-          %a(href="#{admin_post_comment_path(comment.post, comment)}" data-method='delete' title="#{t('views.controls.delete')}"  data-confirm="#{t('views.controls.are_you_sure')}")
-            .glyphicon.glyphicon-trash
+          = check_box_tag('comments[]', comment.id, false, class: 'delete_checkbox')
+  %p.pull-right
+    = submit_tag(t('views.controls.delete'), class: 'btn btn-primary delete_btn')
 
-= link_to(t('views.controls.back'), admin_posts_path, class: 'btn btn-default')
+%p
+  = link_to(t('views.controls.back'), admin_posts_path, class: 'btn btn-default')

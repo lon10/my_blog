@@ -36,6 +36,8 @@ en:
       add_post: 'Add post'
       published: 'Published'
       unpublished: 'Unpublished'
+      commentable: 'Comments enable'
+      uncommentable: 'Comments disable'
       edit_comments: 'Edit comments'
       preview: 'Post preview'
       edit: 'Edit'
@@ -49,6 +51,7 @@ en:
       messages:
         saved: 'Success'
         deleted: 'Success'
+        multiple_deleted: 'Success'
     post:
       messages:
         error: 'Error'
@@ -59,5 +62,7 @@ en:
         deleted: 'deleted'
         published: 'published'
         unpublished: 'unpublished'
+        enable_comments: 'Comments are available for this post now'
+        disable_comments: 'Comments are unavailable for this post now'
       validation:
         can_not_be_number: 'Title can not be a number!'
