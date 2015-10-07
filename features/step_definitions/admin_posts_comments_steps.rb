@@ -33,11 +33,12 @@ When(/^I click on edit post comments$/) do
 end
 
 When(/^I delete comment$/) do
-  page.find('.glyphicon-trash').click
+  page.find('.delete_checkbox').click
+  page.find('.delete_btn').click
 end
 
 Then(/^comment should be deleted$/) do
-  page.should have_content('Комментарий успешно удалён')
+  page.should have_content('Комментарии успешно удалены')
   page.should have_content('К этой статье пока не добавлено ни одного комментария')
   page.should_not have_content('some_name')
   page.should_not have_content('some_text')

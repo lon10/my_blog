@@ -23,5 +23,4 @@ Feature:
     Given there is a comment
       And I am on the existing post comments edit page
     When I delete comment
-      And I confirm dialog
     Then comment should be deleted
