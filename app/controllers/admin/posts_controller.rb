@@ -1,4 +1,6 @@
 class Admin::PostsController < Admin::AdminController
+  before_action :find_post, only: [:edit, :update, :destroy, :publish, :unpublish, :enable_comments, :disable_comments]
+
   def index
     page = params[:page]
 
@@ -25,12 +27,9 @@ class Admin::PostsController < Admin::AdminController
   end
 
   def edit
-    find_post
   end
 
   def update
-    find_post
-
     if @post.update(post_params)
       redirect_to admin_posts_path, notice: t('activerecord.post.messages.updated')
     else
@@ -40,8 +39,6 @@ class Admin::PostsController < Admin::AdminController
   end
 
   def destroy
-    find_post
-
     if @post.delete
       flash[:notice] = t('activerecord.post.messages.deleted')
     else
@@ -52,8 +49,6 @@ class Admin::PostsController < Admin::AdminController
   end
 
   def publish
-    find_post
-
     if @post.update_attribute(:published, true)
       flash[:notice] = t('activerecord.post.messages.published')
     else
@@ -64,9 +59,7 @@ class Admin::PostsController < Admin::AdminController
   end
 
   def unpublish
-    post = find_post
-
-    if post.update_attribute(:published, false)
+    if @post.update_attribute(:published, false)
       flash[:notice] = t('activerecord.post.messages.unpublished')
     else
       flash[:error] = t('activerecord.post.messages.error')
@@ -76,8 +69,6 @@ class Admin::PostsController < Admin::AdminController
   end
 
   def enable_comments
-    find_post
-
     if @post.update_attribute(:commentable, true)
       flash[:notice] = t('activerecord.post.messages.enable_comments')
     else
@@ -88,8 +79,6 @@ class Admin::PostsController < Admin::AdminController
   end
 
   def disable_comments
-    find_post
-
     if @post.update_attribute(:commentable, false)
       flash[:notice] = t('activerecord.post.messages.disable_comments')
     else
